@@ -1,0 +1,1 @@
+// Placeholder db client wiring will be added in later sprints (Prisma + pgvector).

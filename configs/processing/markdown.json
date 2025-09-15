@@ -1,0 +1,17 @@
+{
+  "keepHeadingLevels": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "frontMatterFields": [
+    "source_url",
+    "canonical_url",
+    "fetched_at",
+    "content_hash"
+  ],
+  "normalizeWhitespace": true,
+  "preserveLists": true,
+  "preserveTables": true
+}

@@ -1,0 +1,41 @@
+{
+  "input_validation": {
+    "enabled": true,
+    "library": "zod",
+    "rules": [
+      "reject_empty_strings",
+      "reject_null_values",
+      "reject_invalid_email_format",
+      "reject_invalid_url_format",
+      "sanitize_html_inputs"
+    ]
+  },
+  "headers": {
+    "enabled": true,
+    "library": "next-safe-middleware",
+    "policies": [
+      "Content-Security-Policy",
+      "Strict-Transport-Security",
+      "X-Content-Type-Options",
+      "X-Frame-Options",
+      "Referrer-Policy"
+    ]
+  },
+  "cors": {
+    "enabled": true,
+    "allowlist": [],
+    "note": "No domains allowed until Sprint 4; this must be updated later."
+  },
+  "rate_limits": {
+    "enabled": true,
+    "defaults": {
+      "requests_per_minute": 60,
+      "ban_duration_minutes": 15
+    }
+  },
+  "logging": {
+    "enabled": true,
+    "pii_redaction": true,
+    "format": "json"
+  }
+}

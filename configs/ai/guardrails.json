@@ -1,0 +1,73 @@
+{
+  "version": "1.0",
+  "updated_at": "2025-09-03T21:57:41.976922Z",
+  "retrieval": {
+    "k": 6,
+    "re_ranker": "mmr",
+    "mmr_lambda": 0.3,
+    "min_similarity": 0.35,
+    "min_sources": 2,
+    "age_decay": {
+      "enabled": true,
+      "half_life_days": 365
+    }
+  },
+  "volatility": {
+    "enabled": true,
+    "max_age_days_for_volatile": 180,
+    "volatile_labels": [
+      "operational_notice",
+      "form",
+      "deadline",
+      "pricing",
+      "contact_details"
+    ]
+  },
+  "citations": {
+    "require_citations": true,
+    "max_quote_words": 20,
+    "required_source_domains": [
+      "*.gov.au",
+      "ndis.gov.au",
+      "legislation.gov.au"
+    ]
+  },
+  "scope_router": {
+    "allow_labels": [
+      "ndis_policy",
+      "ndis_process",
+      "eligibility_info",
+      "payments_claims",
+      "provider_rules"
+    ],
+    "deny_categories": [
+      "legal_advice",
+      "medical_advice",
+      "personal_eligibility_decision",
+      "non_au_policy",
+      "financial_advice"
+    ],
+    "on_deny_response": "I can only help with official NDIS policy/process in Australia. Try asking about rules, guidelines, claims, budgets, or provider requirements."
+  },
+  "answer_style": {
+    "prefix_with_source": true,
+    "banned_phrases": [
+      "I think",
+      "probably",
+      "should be fine",
+      "might be okay"
+    ],
+    "format_template": "According to {source_site}, {summary}\n\nSources: {citations}"
+  },
+  "abstain_policy": {
+    "on_low_similarity": "I\u2019m not confident enough to answer that precisely from official sources. Here\u2019s where to check:",
+    "on_insufficient_sources": "I couldn\u2019t find enough authoritative references to answer reliably. Here are the closest official pages:",
+    "on_mismatch": "The retrieved sources don\u2019t support a definitive answer. Please review these official links:",
+    "on_out_of_scope": "That\u2019s outside the scope of NDIS policy guidance. I can help with rules, guidelines, claims and provider questions."
+  },
+  "safety": {
+    "pii_redaction_enabled": true,
+    "max_answer_chars": 1400,
+    "disclaimer": "This is general information only. Always confirm details on the official site linked below."
+  }
+}

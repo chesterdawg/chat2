@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "updated_at": "2025-09-04T08:31:26.426462Z",
+  "domains": [
+    "ndis.gov.au",
+    "ourguidelines.ndis.gov.au",
+    "legislation.gov.au",
+    "servicesaustralia.gov.au",
+    "humanrights.gov.au"
+  ],
+  "notes": "Restrict scraping and retrieval to official, authoritative government sources only. Subdomains must be explicitly whitelisted."
+}

@@ -1,0 +1,7 @@
+{
+  "version": "1.0",
+  "iframe_src": "http://localhost:3000/widget-frame",
+  "default_height": "600px",
+  "default_width": "100%",
+  "allowlist": []
+}

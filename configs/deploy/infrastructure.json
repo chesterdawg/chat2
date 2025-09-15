@@ -1,0 +1,70 @@
+{
+  "version": "1.0",
+  "region": "ap-southeast-2",
+  "service": {
+    "name": "ndis-chatbot",
+    "runtime_port": 3000,
+    "health_check_path": "/api/health",
+    "container": {
+      "ecr_repo": "ndis-chatbot",
+      "image_tag": "beta-1",
+      "cpu": 1024,
+      "memory_mb": 2048
+    },
+    "app_runner": {
+      "https": true,
+      "auto_deploy": true
+    }
+  },
+  "network": {
+    "vpc_strategy": "managed-by-service",
+    "egress": "restricted",
+    "ingress": {
+      "allowed": [
+        "https"
+      ]
+    }
+  },
+  "database": {
+    "engine": "postgres",
+    "version": "16.3",
+    "identifier": "ndis-chatbot-prod",
+    "multi_az": true,
+    "storage_gb": 50,
+    "parameter_group": "default.postgres16",
+    "dbname": "ndis_chatbot",
+    "admin_user": "admin",
+    "connection": {
+      "url_ssm_path": "/ndis-chatbot/prod/DATABASE_URL"
+    }
+  },
+  "buckets": {
+    "artifacts": "ndis-chatbot-artifacts-${ACCOUNT_ID}-ap-southeast-2",
+    "backups": "ndis-chatbot-backups-${ACCOUNT_ID}-ap-southeast-2",
+    "encryption": "AES256",
+    "lifecycle": {
+      "backups_keep_days": 35
+    }
+  },
+  "security": {
+    "headers_from": "configs/security/baseline.json",
+    "iam": {
+      "allow_ssm_paths": [
+        "/ndis-chatbot/prod/*"
+      ]
+    }
+  },
+  "backup": {
+    "rds_automated_retention_days": 7,
+    "preferred_backup_window": "15:30-16:00",
+    "logical_dump": {
+      "enabled": true,
+      "schedule_cron": "40 1 * * *",
+      "target_bucket": "ndis-chatbot-backups-${ACCOUNT_ID}-ap-southeast-2"
+    }
+  },
+  "observability": {
+    "healthcheck_path": "/api/health",
+    "logs": "cloudwatch"
+  }
+}

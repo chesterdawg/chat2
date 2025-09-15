@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "strip_patterns": [
+    "Copyright ©.*NDIS.*",
+    "All rights reserved.*",
+    "Subscribe to newsletter.*"
+  ],
+  "normalize_whitespace": true,
+  "remove_selectors": [
+    "script",
+    "style",
+    "nav",
+    "header",
+    "footer",
+    ".breadcrumb",
+    ".sidebar",
+    "#skip-link"
+  ]
+}

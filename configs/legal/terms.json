@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "updated_at": "2025-08-19T00:00:00Z",
+  "terms": {
+    "allowed_use": [
+      "Ask questions about the NDIS",
+      "Personal educational use only"
+    ],
+    "prohibited_use": [
+      "Spamming or abusing the chatbot",
+      "Trying to break or hack the system",
+      "Asking non-NDIS questions"
+    ],
+    "liability": "This chatbot provides information only. It is not a replacement for professional advice. Users should always check official NDIS sources.",
+    "governing_law": "Australia"
+  }
+}

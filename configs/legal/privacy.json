@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "updated_at": "2025-08-19T00:00:00Z",
+  "privacy": {
+    "data_collected": [
+      "Anonymous usage counts",
+      "Technical logs with no personal info"
+    ],
+    "data_not_collected": [
+      "Names",
+      "Emails",
+      "Phone numbers",
+      "NDIS numbers"
+    ],
+    "data_storage": "All data is stored in Australia with no personal identifiers.",
+    "pii_policy": "Zero PII is collected or stored."
+  }
+}

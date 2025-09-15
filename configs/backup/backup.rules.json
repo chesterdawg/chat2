@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "scope": "prod-beta",
+  "region": "ap-southeast-2",
+  "database": {
+    "identifier": "ndis-chatbot-prod",
+    "engine": "postgres",
+    "automated_snapshots": {
+      "enabled": true,
+      "retention_days": 7,
+      "preferred_window": "15:30-16:00"
+    },
+    "logical_backups": {
+      "enabled": true,
+      "schedule_cron": "40 1 * * *",
+      "tool": "pg_dump",
+      "target_bucket": "ndis-chatbot-backups-${ACCOUNT_ID}-ap-southeast-2",
+      "path_prefix": "postgres/dumps/",
+      "encryption": "AES256",
+      "integrity_check": {
+        "enabled": true,
+        "weekly_day": "SUN",
+        "hour_24h": 3
+      }
+    },
+    "point_in_time_recovery": {
+      "enabled": true
+    }
+  },
+  "buckets": [
+    {
+      "name": "ndis-chatbot-backups-${ACCOUNT_ID}-ap-southeast-2",
+      "encryption": "AES256",
+      "lifecycle": {
+        "noncurrent_version_expiration_days": 30,
+        "expiration_days": 35
+      }
+    }
+  ],
+  "restore_objectives": {
+    "rpo_minutes": 30,
+    "rto_minutes": 60
+  },
+  "notifications": []
+}

@@ -1,0 +1,180 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Tenant Provisioning Schema",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "enum": [
+        "1.0.0"
+      ]
+    },
+    "tenants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "tenantId",
+          "slug",
+          "displayName",
+          "cors",
+          "security",
+          "features",
+          "rateLimit",
+          "db",
+          "vector"
+        ],
+        "properties": {
+          "tenantId": {
+            "type": "string",
+            "pattern": "^[0-9a-fA-F-]{36}$",
+            "description": "UUID v4 string for the tenant"
+          },
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]{2,32}$"
+          },
+          "displayName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "apiKeys": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^sk_[a-zA-Z0-9]{16,}$"
+            },
+            "uniqueItems": true
+          },
+          "cors": {
+            "type": "object",
+            "required": [
+              "allowOrigins"
+            ],
+            "properties": {
+              "allowOrigins": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "uniqueItems": true
+              }
+            }
+          },
+          "security": {
+            "type": "object",
+            "required": [
+              "frameAncestors"
+            ],
+            "properties": {
+              "frameAncestors": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "uniqueItems": true
+              },
+              "jwt": {
+                "type": "object",
+                "required": [
+                  "issuer",
+                  "audience"
+                ],
+                "properties": {
+                  "issuer": {
+                    "type": "string"
+                  },
+                  "audience": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          },
+          "features": {
+            "type": "object",
+            "properties": {
+              "chat": {
+                "type": "boolean"
+              },
+              "citations": {
+                "type": "boolean"
+              },
+              "analytics": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false
+          },
+          "rateLimit": {
+            "type": "object",
+            "required": [
+              "windowSeconds",
+              "maxRequests",
+              "banDurationSeconds"
+            ],
+            "properties": {
+              "windowSeconds": {
+                "type": "integer",
+                "minimum": 10
+              },
+              "maxRequests": {
+                "type": "integer",
+                "minimum": 10
+              },
+              "banDurationSeconds": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "additionalProperties": false
+          },
+          "db": {
+            "type": "object",
+            "required": [
+              "schema"
+            ],
+            "properties": {
+              "schema": {
+                "type": "string",
+                "pattern": "^[a-z_][a-z0-9_]{0,62}$"
+              }
+            },
+            "additionalProperties": false
+          },
+          "vector": {
+            "type": "object",
+            "required": [
+              "namespace"
+            ],
+            "properties": {
+              "namespace": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          },
+          "analytics": {
+            "type": "object",
+            "properties": {
+              "plausibleDomain": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "version",
+    "tenants"
+  ],
+  "additionalProperties": false
+}

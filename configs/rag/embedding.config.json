@@ -1,0 +1,12 @@
+{
+  "embedding_model": "text-embedding-3-small",
+  "chunker": "by_headings_fallback_token",
+  "max_chunk_tokens": 800,
+  "overlap_tokens": 120,
+  "index_params": {
+    "type": "hnsw",
+    "m": 16,
+    "ef_construction": 200,
+    "ef_search": 40
+  }
+}

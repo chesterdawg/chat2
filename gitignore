@@ -1,0 +1,77 @@
+# --- OS & Editor junk ---
+.DS_Store
+__MACOSX/
+Thumbs.db
+Icon\r
+._*
+*.swp
+*~
+.vscode/
+.idea/
+
+# --- Environment files (keep examples tracked) ---
+.env
+.env.*
+!.env.example
+
+# --- Logs & diagnostics ---
+logs/
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+debug.log
+
+# --- Node / Next.js build artifacts ---
+node_modules/
+.next/
+.next/cache/
+out/
+dist/
+build/
+.turbo/
+.vercel/
+
+# --- Test outputs & coverage ---
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+reports/
+
+# --- Caches ---
+.cache/
+.cache-loader/
+.tmp/
+tmp/
+temp/
+
+# --- Python (for local scripts & tooling) ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.venv/
+venv/
+env/
+.python-version
+
+# --- Package managers (keep lockfiles committed) ---
+# (Intentionally NOT ignoring package-lock.json / yarn.lock / pnpm-lock.yaml)
+
+# --- Misc tooling ---
+.sass-cache/
+.parcel-cache/
+.vite/
+
+# --- OS-specific files (additional safety) ---
+.LSOverride
+.AppleDouble
+
+# --- Generated artifacts (docs/ exports, if any) ---
+*.tgz
+*.zip
+*.tar
+*.tar.gz

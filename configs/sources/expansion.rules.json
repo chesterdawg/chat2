@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "sources": [
+    {
+      "domain": "www.ndis.gov.au",
+      "description": "National Disability Insurance Scheme official site",
+      "include_paths": ["/participants", "/providers"],
+      "exclude_paths": ["/news-events"]
+    },
+    {
+      "domain": "www.dss.gov.au",
+      "description": "Department of Social Services official site",
+      "include_paths": ["/disability-and-carers", "/about-the-department"],
+      "exclude_paths": ["/news", "/publications-articles"]
+    },
+    {
+      "domain": "www.servicesaustralia.gov.au",
+      "description": "Services Australia official site for payments and supports",
+      "include_paths": ["/disability", "/individuals"],
+      "exclude_paths": ["/about", "/news"]
+    },
+    {
+      "domain": "www.health.gov.au",
+      "description": "Department of Health and Aged Care official site",
+      "include_paths": ["/resources", "/topics"],
+      "exclude_paths": ["/news", "/careers"]
+    }
+  ]
+}

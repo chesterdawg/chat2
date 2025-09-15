@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "events": [
+    {
+      "id": "question_submitted",
+      "description": "User submits a question in the chatbot widget.",
+      "category": "interaction"
+    },
+    {
+      "id": "answer_rendered",
+      "description": "Chatbot displays an answer to the user.",
+      "category": "interaction"
+    },
+    {
+      "id": "citation_link_clicked",
+      "description": "User clicks a citation link in the answer to view the source.",
+      "category": "navigation"
+    }
+  ]
+}

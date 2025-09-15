@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "updated_at": "2025-08-19T00:00:00Z",
+  "wcag_2_1_AA": {
+    "text_contrast": "Minimum 4.5:1",
+    "resize_text": "200% without breaking layout",
+    "keyboard_accessible": true,
+    "screen_reader_labels": true,
+    "timing_adjustable": true,
+    "error_messages_clear": true
+  },
+  "verification_commands": [
+    "npm run a11y:ci"
+  ]
+}

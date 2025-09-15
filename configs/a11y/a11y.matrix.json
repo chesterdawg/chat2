@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema#",
+  "version": "1.0",
+  "updated_at": "2025-08-19T06:52:37+09:30",
+  "scope": "chat_widget",
+  "checks": [
+    {
+      "id": "A11Y-001",
+      "desc": "Keyboard focus order matches visual order for widget open \u2192 close.",
+      "howToTest": [
+        "Open the widget with keyboard only (Tab/Enter).",
+        "Tab through all interactive elements; focus ring must be visible.",
+        "Press Escape to close; focus returns to the launcher button."
+      ],
+      "tooling": [
+        "axe",
+        "eslint-plugin-jsx-a11y"
+      ],
+      "severity": "high",
+      "wcagRefs": [
+        "2.4.3",
+        "2.4.7"
+      ]
+    },
+    {
+      "id": "A11Y-002",
+      "desc": "Color contrast ratio meets \u2265 4.5:1 for text and 3:1 for large text/icons.",
+      "howToTest": [
+        "Run axe on the chat view.",
+        "Use a contrast checker on primary/secondary text and buttons."
+      ],
+      "tooling": [
+        "axe"
+      ],
+      "severity": "high",
+      "wcagRefs": [
+        "1.4.3",
+        "1.4.11"
+      ]
+    },
+    {
+      "id": "A11Y-003",
+      "desc": "ARIA landmarks present (main, form, complementary) with unique labels.",
+      "howToTest": [
+        "Inspect the widget container for role=dialog or role=region with aria-label.",
+        "Ensure a single main landmark exists in the widget\u2019s DOM subtree."
+      ],
+      "tooling": [
+        "eslint-plugin-jsx-a11y"
+      ],
+      "severity": "medium",
+      "wcagRefs": [
+        "1.3.1",
+        "4.1.2"
+      ]
+    },
+    {
+      "id": "A11Y-004",
+      "desc": "No keyboard traps; user can tab in and out of the widget.",
+      "howToTest": [
+        "Open widget, Tab to last focusable element.",
+        "Tab once more; focus either cycles in dialog (with proper loop) or exits cleanly when closed."
+      ],
+      "tooling": [
+        "axe"
+      ],
+      "severity": "high",
+      "wcagRefs": [
+        "2.1.2"
+      ]
+    },
+    {
+      "id": "A11Y-005",
+      "desc": "Labels and names for inputs and buttons are programmatically determinable.",
+      "howToTest": [
+        "Check input has visible label and/or aria-label.",
+        "Check send button has aria-label='Send message' or equivalent."
+      ],
+      "tooling": [
+        "eslint-plugin-jsx-a11y"
+      ],
+      "severity": "high",
+      "wcagRefs": [
+        "3.3.2",
+        "4.1.2"
+      ]
+    },
+    {
+      "id": "A11Y-006",
+      "desc": "Live region announces new assistant messages to screen readers.",
+      "howToTest": [
+        "Set container role=log or aria-live='polite'.",
+        "Send a message and confirm SR announces assistant reply once."
+      ],
+      "tooling": [
+        "axe"
+      ],
+      "severity": "high",
+      "wcagRefs": [
+        "4.1.3"
+      ]
+    },
+    {
+      "id": "A11Y-007",
+      "desc": "Motion/animation respects reduced\u2011motion preference.",
+      "howToTest": [
+        "Enable 'Reduce motion' in OS settings.",
+        "Confirm transitions are removed or simplified."
+      ],
+      "tooling": [
+        "eslint-plugin-jsx-a11y"
+      ],
+      "severity": "medium",
+      "wcagRefs": [
+        "2.2.2"
+      ]
+    },
+    {
+      "id": "A11Y-008",
+      "desc": "Provide a visible focus style with at least 3:1 contrast.",
+      "howToTest": [
+        "Tab through interactive elements; verify custom outline meets contrast threshold."
+      ],
+      "tooling": [
+        "axe"
+      ],
+      "severity": "medium",
+      "wcagRefs": [
+        "2.4.7",
+        "1.4.11"
+      ]
+    },
+    {
+      "id": "A11Y-009",
+      "desc": "Error messages are announced and associated with the field.",
+      "howToTest": [
+        "Trigger a validation error; ensure aria-describedby links error to input and live region announces once."
+      ],
+      "tooling": [
+        "axe"
+      ],
+      "severity": "high",
+      "wcagRefs": [
+        "3.3.1",
+        "3.3.3"
+      ]
+    },
+    {
+      "id": "A11Y-010",
+      "desc": "Provide a 'Skip to chat input' link when the dialog opens.",
+      "howToTest": [
+        "Open widget and press Tab; first focusable element should be the skip link; Enter moves focus to input."
+      ],
+      "tooling": [
+        "eslint-plugin-jsx-a11y"
+      ],
+      "severity": "low",
+      "wcagRefs": [
+        "2.4.1"
+      ]
+    }
+  ]
+}

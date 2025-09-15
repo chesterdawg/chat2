@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "updated_at": "2025-08-15T04:02:03.559519Z",
+  "project_name": "ndis-support-chatbot",
+  "paths": {
+    "app": "app",
+    "src": "src",
+    "docs": "docs",
+    "configs": "configs",
+    "tests": "tests",
+    "ci": "ci"
+  },
+  "kiro": {
+    "steering_rules_path": "configs/kiro/steering-rules.json"
+  },
+  "npm_scripts_expected": [
+    "typecheck",
+    "lint",
+    "format",
+    "test",
+    "prepare",
+    "a11y:ci",
+    "lh:ci"
+  ],
+  "notes": "Keep this file updated when adding new top-level folders or standard scripts."
+}

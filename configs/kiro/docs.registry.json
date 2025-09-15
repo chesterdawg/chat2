@@ -1,0 +1,299 @@
+{
+  "version": "1.0",
+  "updated_at": "2025-09-04T08:24:41.706213Z",
+  "docs_root": "docs",
+  "configs_root": "configs",
+  "schema": {
+    "fields": {
+      "id": "unique string id for sprint/batch",
+      "sprint": "S0..S7",
+      "batch": "A..Z",
+      "title": "human readable title",
+      "docs": [
+        {
+          "path": "docs/<file>.md",
+          "required": true
+        }
+      ],
+      "configs": [
+        {
+          "path": "configs/<folder>/<file>.json",
+          "required": true
+        }
+      ]
+    }
+  },
+  "registry": {
+    "S0": {
+      "BatchA": [
+        {
+          "path": "docs/setup_01_nodejs_part1.md"
+        },
+        {
+          "path": "docs/setup_01_nodejs_part2.md"
+        },
+        {
+          "path": "docs/setup_03_git_repo_part1.md"
+        },
+        {
+          "path": "configs/quality/eslint.config.json"
+        },
+        {
+          "path": "configs/quality/prettier.config.json"
+        }
+      ],
+      "BatchB": [
+        {
+          "path": "docs/setup_04_code_quality_part1_eslint_prettier.md"
+        },
+        {
+          "path": "docs/setup_05_accessibility_baseline.md"
+        },
+        {
+          "path": "configs/a11y/checks.json"
+        },
+        {
+          "path": "configs/a11y/a11y.matrix.json"
+        }
+      ],
+      "BatchC": [
+        {
+          "path": "docs/setup_06_security_baseline.md"
+        },
+        {
+          "path": "docs/setup_07_ci_baseline.md"
+        },
+        {
+          "path": "configs/security/baseline.json"
+        },
+        {
+          "path": "configs/ci/pipeline.json"
+        },
+        {
+          "path": "configs/kiro/project.json"
+        },
+        {
+          "path": "configs/kiro/steering-rules.json"
+        },
+        {
+          "path": "configs/kiro/docs.registry.json"
+        }
+      ]
+    },
+    "S1": {
+      "BatchA": [
+        {
+          "path": "docs/content_01_sources_pilot.md"
+        },
+        {
+          "path": "docs/content_02_scraper_minimal.md"
+        },
+        {
+          "path": "configs/sources/allowlist.json"
+        },
+        {
+          "path": "configs/scraper/rules.min.json"
+        },
+        {
+          "path": "configs/processing/markdown.json"
+        }
+      ],
+      "BatchB": [
+        {
+          "path": "docs/ai_01_embeddings_pgvector.md"
+        },
+        {
+          "path": "docs/ai_02_rag_api_minimal.md"
+        },
+        {
+          "path": "docs/frontend_01_chat_minimal.md"
+        },
+        {
+          "path": "configs/rag/embedding.config.json"
+        },
+        {
+          "path": "configs/rag/pipeline.min.json"
+        },
+        {
+          "path": "configs/security/domain-guard.json"
+        }
+      ]
+    },
+    "S2": {
+      "BatchA": [
+        {
+          "path": "docs/design_01_tokens_and_theme.md"
+        },
+        {
+          "path": "docs/frontend_02_widget_embed.md"
+        },
+        {
+          "path": "docs/frontend_03_widget_a11y.md"
+        },
+        {
+          "path": "configs/widget/theme.tokens.json"
+        },
+        {
+          "path": "configs/widget/embed.config.json"
+        }
+      ],
+      "BatchB": [
+        {
+          "path": "docs/ops_01_analytics_minimal.md"
+        },
+        {
+          "path": "configs/analytics/events.json"
+        }
+      ]
+    },
+    "S3": {
+      "BatchA": [
+        {
+          "path": "docs/content_03_source_expansion.md"
+        },
+        {
+          "path": "docs/content_04_refresh_job.md"
+        },
+        {
+          "path": "docs/content_05_ingest_resilience.md"
+        },
+        {
+          "path": "configs/sources/expansion.rules.json"
+        },
+        {
+          "path": "configs/pipeline/refresh.schedule.json"
+        },
+        {
+          "path": "configs/pipeline/cleaning.rules.json"
+        }
+      ]
+    },
+    "S4": {
+      "BatchA": [
+        {
+          "path": "docs/platform_01_multitenancy.md"
+        },
+        {
+          "path": "docs/platform_02_domain_allowlist.md"
+        },
+        {
+          "path": "docs/platform_03_rate_limit.md"
+        },
+        {
+          "path": "docs/ops_02_monitoring_and_perf.md"
+        },
+        {
+          "path": "docs/ops_03_secrets_and_envs.md"
+        },
+        {
+          "path": "configs/tenants/schema.json"
+        },
+        {
+          "path": "configs/tenants/provisioning.json"
+        },
+        {
+          "path": "configs/security/rate-limit.json"
+        },
+        {
+          "path": "configs/security/headers.json"
+        },
+        {
+          "path": "configs/observability/monitoring.config.json"
+        },
+        {
+          "path": "configs/perf/budgets.json"
+        }
+      ]
+    },
+    "S5": {
+      "BatchA": [
+        {
+          "path": "docs/qa_01_test_plan_and_setup.md"
+        },
+        {
+          "path": "docs/qa_02_ai_guardrails.md"
+        },
+        {
+          "path": "docs/legal_01_privacy_terms.md"
+        },
+        {
+          "path": "docs/compliance_01_ndis_wcag_checklist.md"
+        },
+        {
+          "path": "configs/qa/test.plan.json"
+        },
+        {
+          "path": "configs/qa/a11y.matrix.json"
+        },
+        {
+          "path": "configs/ai/guardrails.json"
+        },
+        {
+          "path": "configs/legal/privacy.json"
+        },
+        {
+          "path": "configs/legal/terms.json"
+        },
+        {
+          "path": "configs/compliance/ndis_wcag.checklist.json"
+        }
+      ]
+    },
+    "S6": {
+      "BatchA": [
+        {
+          "path": "docs/deploy_01_aws_kiro.md"
+        },
+        {
+          "path": "docs/deploy_02_database_ops.md"
+        },
+        {
+          "path": "docs/ops_04_runbooks.md"
+        },
+        {
+          "path": "docs/biz_01_onboarding_checklist.md"
+        },
+        {
+          "path": "configs/deploy/infrastructure.json"
+        },
+        {
+          "path": "configs/deploy/env.prod.json"
+        },
+        {
+          "path": "configs/backup/backup.rules.json"
+        },
+        {
+          "path": "configs/ops/runbooks.json"
+        },
+        {
+          "path": "configs/onboarding/checklist.json"
+        }
+      ]
+    },
+    "S7": {
+      "BatchA": [
+        {
+          "path": "docs/opt_01_performance_and_caching.md"
+        },
+        {
+          "path": "docs/opt_02_content_growth_playbook.md"
+        },
+        {
+          "path": "docs/opt_03_ai_enhancements.md"
+        },
+        {
+          "path": "configs/perf/caching.json"
+        },
+        {
+          "path": "configs/perf/budgets.scale.json"
+        },
+        {
+          "path": "configs/content/quality.sampling.json"
+        },
+        {
+          "path": "configs/roadmap/vector_adapters.json"
+        }
+      ]
+    }
+  }
+}

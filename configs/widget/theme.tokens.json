@@ -1,0 +1,49 @@
+{
+  "version": "1.0",
+  "note": "Neutral default theme for the NDIS chatbot widget. WCAG 2.1 AA-friendly tokens with high contrast by default.",
+  "colors": {
+    "background": "#0B0F14",
+    "surface": "#121821",
+    "text": "#FFFFFF",
+    "textMuted": "#CDD6E0",
+    "primary": "#0A84FF",
+    "primaryForeground": "#FFFFFF",
+    "border": "#1F2A37",
+    "focusRing": "#66B2FF",
+    "success": "#16A34A",
+    "warning": "#D97706",
+    "danger": "#DC2626"
+  },
+  "font": {
+    "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'",
+    "size": {
+      "xs": "12px",
+      "sm": "14px",
+      "md": "16px",
+      "lg": "18px",
+      "xl": "20px"
+    },
+    "lineHeight": {
+      "tight": 1.2,
+      "normal": 1.5,
+      "relaxed": 1.7
+    }
+  },
+  "spacing": {
+    "xxs": "2px",
+    "xs": "4px",
+    "sm": "8px",
+    "md": "12px",
+    "lg": "16px",
+    "xl": "24px",
+    "xxl": "32px"
+  },
+  "radius": {
+    "none": "0px",
+    "sm": "4px",
+    "md": "8px",
+    "lg": "12px",
+    "xl": "16px",
+    "pill": "9999px"
+  }
+}

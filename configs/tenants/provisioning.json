@@ -1,0 +1,93 @@
+{
+  "version": "1.0.0",
+  "tenants": [
+    {
+      "tenantId": "aaaaaaaa-aaaa-4aaa-aaaa-aaaaaaaaaaaa",
+      "slug": "default",
+      "displayName": "Default Pilot",
+      "apiKeys": [
+        "sk_dev_default_1234567890ABCD"
+      ],
+      "cors": {
+        "allowOrigins": [
+          "http://localhost:3000",
+          "http://127.0.0.1:3000",
+          "https://dev.planpal.au"
+        ]
+      },
+      "security": {
+        "frameAncestors": [
+          "'self'",
+          "http://localhost:3000",
+          "http://127.0.0.1:3000",
+          "https://dev.planpal.au"
+        ],
+        "jwt": {
+          "issuer": "https://auth.planpal.au/",
+          "audience": "planpal-default"
+        }
+      },
+      "features": {
+        "chat": true,
+        "citations": true,
+        "analytics": true
+      },
+      "rateLimit": {
+        "windowSeconds": 60,
+        "maxRequests": 120,
+        "banDurationSeconds": 300
+      },
+      "db": {
+        "schema": "public"
+      },
+      "vector": {
+        "namespace": "tenant_default"
+      },
+      "analytics": {
+        "plausibleDomain": "dev.planpal.au"
+      }
+    },
+    {
+      "tenantId": "bbbbbbbb-bbbb-4bbb-bbbb-bbbbbbbbbbbb",
+      "slug": "pilot-sa",
+      "displayName": "SA Pilot",
+      "apiKeys": [
+        "sk_live_pilotsa_9Z8Y7X6W5V4U"
+      ],
+      "cors": {
+        "allowOrigins": [
+          "https://sa-pilot.planpal.au"
+        ]
+      },
+      "security": {
+        "frameAncestors": [
+          "'self'",
+          "https://sa-pilot.planpal.au"
+        ],
+        "jwt": {
+          "issuer": "https://auth.planpal.au/",
+          "audience": "planpal-sa"
+        }
+      },
+      "features": {
+        "chat": true,
+        "citations": true,
+        "analytics": true
+      },
+      "rateLimit": {
+        "windowSeconds": 60,
+        "maxRequests": 60,
+        "banDurationSeconds": 300
+      },
+      "db": {
+        "schema": "public"
+      },
+      "vector": {
+        "namespace": "tenant_sa_pilot"
+      },
+      "analytics": {
+        "plausibleDomain": "sa-pilot.planpal.au"
+      }
+    }
+  ]
+}
