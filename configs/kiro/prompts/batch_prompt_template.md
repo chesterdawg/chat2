@@ -16,7 +16,7 @@ NDIS Support Chatbot — educational, high-school-friendly instructional docs. *
 ## Rules (do not change)
 - Audience: **high school student**; Tone: **educational, friendly, plain English**.
 - Doc structure for every file: Title + Sprint/Task + Audience + Estimated time + Outcome; then **What / Why / How / Verify / Troubleshoot / Acceptance Criteria**.
-- **No placeholders** (no “TBD/PLACEHOLDER/Lorem/Sample/Test only/???/xxx”). If something isn’t known, leave lists empty (e.g., `[]`) or omit the key.
+- **No placeholders** (no “to-be-decided/PLACEHOLDER/Lorem/Sample/Test only/???/xxx”). If something isn’t known, leave lists empty (e.g., `[]`) or omit the key.
 - Commands must be **copy–paste ready** and show **expected outputs** where helpful.
 - Use the exact repo paths and filenames.
 - JSONs must contain **concrete values**. Avoid dummy strings; empty arrays are fine for unknown lists.

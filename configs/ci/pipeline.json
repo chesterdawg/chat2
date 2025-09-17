@@ -1,64 +1,13 @@
 {
-  "schemaVersion": "1.0",
-  "description": "CI pipeline configuration for docs guard, linting, type checking, and unit tests.",
-  "triggers": {
-    "push": [
-      "main"
-    ],
-    "pull_request": [
-      "*"
-    ]
-  },
-  "jobs": {
-    "doc-guard": {
-      "runs-on": "ubuntu-latest",
-      "steps": [
-        {
-          "name": "Checkout",
-          "run": "git checkout -q $GITHUB_SHA"
-        },
-        {
-          "name": "Setup Node",
-          "run": "npm --version && node --version"
-        },
-        {
-          "name": "Install dependencies",
-          "run": "npm ci || true"
-        },
-        {
-          "name": "Doc completeness check",
-          "run": "python ci/doc_completeness_check.py"
-        }
-      ]
+  "version": "1",
+  "jobs": [
+    {
+      "name": "Doc completeness check",
+      "run": "node ci/doc_guard.mjs"
     },
-    "lint-type-unit": {
-      "runs-on": "ubuntu-latest",
-      "steps": [
-        {
-          "name": "Install dependencies",
-          "run": "npm ci || true"
-        },
-        {
-          "name": "Lint",
-          "run": "npm run lint || true"
-        },
-        {
-          "name": "Typecheck",
-          "run": "npm run typecheck || true"
-        },
-        {
-          "name": "Test",
-          "run": "npm run test || true"
-        }
-      ]
+    {
+      "name": "Lint / Typecheck / Unit tests",
+      "run": "npm run lint && npm run typecheck && npm test"
     }
-  },
-  "a11y": {
-    "axe": {
-      "enabled": false
-    },
-    "lighthouse": {
-      "enabled": false
-    }
-  }
+  ]
 }

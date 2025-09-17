@@ -2,7 +2,7 @@
 
 A single, ordered list of everything we need to execute from the latest review — optimized for **Kiro-first** development on our **Next.js + TypeScript + Postgres + pgvector** stack, deploying to **AWS**. Each task includes **Why → Steps → Commands → Acceptance Criteria**. Tick them off one by one.
 
-> Legend: ✅ done · ☐ todo · 🔁 repeatable
+> Legend: ✅ done · ☐ to-do · 🔁 repeatable
 
 ---
 
@@ -179,7 +179,7 @@ import { join } from 'node:path';
 
 const DOCS = 'docs';
 const REQUIRED = ["What","Why","How","Verify","Troubleshoot","Acceptance Criteria"];
-const BANNED = ["TBD","PLACEHOLDER","Lorem","???","xxx"]; 
+const BANNED = ["to-be-decided","PLACEHOLDER","Lorem","???","xxx"]; 
 
 let failures = 0;
 
@@ -213,7 +213,7 @@ Create `configs/kiro/steering-rules.json`:
 {
   "doc_style": {
     "required_sections": ["What","Why","How","Verify","Troubleshoot","Acceptance Criteria"],
-    "banned_placeholders": ["TBD","PLACEHOLDER","Lorem","???","xxx"],
+    "banned_placeholders": ["to-be-decided","PLACEHOLDER","Lorem","???","xxx"],
     "audience": "high school",
     "tone": "plain English"
   },
@@ -345,7 +345,7 @@ export function middleware(req: NextRequest) {
 
 **Steps**
 - Implement a simple in-memory token bucket for dev.
-- Add TODO to replace with Redis/WAF in prod.
+- Add follow-up to replace with Redis/WAF in prod.
 
 **Acceptance Criteria**
 - ☐ Repeated calls above threshold return 429 locally

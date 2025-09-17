@@ -1,6 +1,38 @@
 {
-  "version": "1.0",
-  "updated_at": "2025-08-14T21:36:12.026175Z",
-  "notes": "Scaffold config. Fill values during sprint build; avoid sensitive data.",
-  "config": {}
+  "version": "1",
+  "guardrails": {
+    "domain_allowlist": [
+      "ndis.gov.au",
+      "ourguidelines.ndis.gov.au",
+      "servicesaustralia.gov.au"
+    ],
+    "block_non_allowed_domains": true,
+    "cite_sources": true,
+    "min_citations": 1
+  },
+  "style": {
+    "australian_english": true,
+    "tone": "clear, supportive, citation-first",
+    "avoid_speculation": true,
+    "answer_length": "concise"
+  },
+  "answers": {
+    "required_citation_domains_only": true,
+    "fallback_on_no_source": "I'm not confident. I can only answer using official NDIS sources. Try rephrasing your question or provide an official link."
+  },
+  "retrieval": {
+    "embedding": "pgvector",
+    "max_context_docs": 8,
+    "rerank": true,
+    "similarity": "cosine",
+    "min_score": 0.3
+  },
+  "refusal_policy": {
+    "non_ndis_scope": "Sorry, I can only answer questions about the NDIS using official sources.",
+    "personal_medical_financial": "I can't provide personalised medical, legal, or financial advice. Please consult a qualified professional."
+  },
+  "formatting": {
+    "citations_format": "inline_links",
+    "include_source_titles": true
+  }
 }

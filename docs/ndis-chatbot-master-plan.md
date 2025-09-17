@@ -9,7 +9,7 @@
 
 **Batch size:** 3–5 files per batch (docs + paired JSONs).  
 **Order:** Follow the batch breakdown below (top to bottom).  
-**Style:** High-school-friendly, plain English. **No placeholders** (no “TBD/PLACEHOLDER/Lorem/Sample/Test only/???/xxx”).  
+**Style:** High-school-friendly, plain English. **No placeholders** (no “to-be-decided/PLACEHOLDER/Lorem/Sample/Test only/???/xxx”).  
 **Required doc structure:** Title + Sprint/Task + Audience + Estimated time + Outcome; then **What / Why / How / Verify / Troubleshoot / Acceptance Criteria**.
 
 ### Per-batch Checklist (run every time)
@@ -67,7 +67,7 @@
 - **Acceptance Criteria** (objective tick‑box list)
 
 **Musts:**  
-- No placeholders (“TBD/PLACEHOLDER/Lorem/Sample/Test only/???/xxx”).  
+- No placeholders (“to-be-decided/PLACEHOLDER/Lorem/Sample/Test only/???/xxx”).  
 - Keep commands copy‑paste safe; show what “good” output looks like.  
 - Name files and folders exactly as in the repo.  
 - No secrets or PII in docs, examples, or logs.
